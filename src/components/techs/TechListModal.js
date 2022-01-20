@@ -1,32 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import Preloader from '../layout/Preloader'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import TechItem from './TechItem'
+import { getTechs } from '../../actions/techActions'
+import PropTypes from 'prop-types'
 
-const TechListModal = () => {
-    const [techs, setTechs] = useState([])
-    const [loading, setLoading] = useState(false)
+
+
+const TechListModal = ({ tech : { techs, loading } , getTechs }) => {
 
     useEffect(() => {
         getTechs()
         //eslint-disable-next-line
-    }, [])
-
-    const getTechs = async () => {
-        setLoading(true)
-
-        const res = await fetch('/techs')
-        const data = await res.json()
-
-        setTechs(data)
-        setLoading(false)
-    }
+    }, [techs])
 
     return (
         <div id="tech-list-modal" className="modal">
             <div className="container">
                 <div className="modal-content">
-                    { loading ? <Preloader/> : loading == false && techs.length == 0 ? 
+                    { loading ? <Preloader/> : loading === false && techs === null ? 
                         <h4 className="center">There are no techs here...</h4> :
                         <ul className="collection with-header">
                             <li className="collection-header">
@@ -43,5 +36,15 @@ const TechListModal = () => {
     )
 }
 
+TechListModal.propTypes = {
+    tech: PropTypes.object.isRequired,
+    getTechs: PropTypes.func.isRequired
+}
 
-export default TechListModal
+
+const mapStateToProp = state => ({
+    tech: state.tech
+})
+
+
+export default connect(mapStateToProp, { getTechs })(TechListModal)

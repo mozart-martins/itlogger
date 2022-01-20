@@ -1,46 +1,25 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 0057",
-      "attention": true,
-      "tech": "Sam Smith",
-      "date": "2022-01-19T12:19:42.795Z"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
-      "attention": true,
-      "date": "03-02-2019",
-      "tech": "John Doe"
-    },
-    {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sara Wilson"
-    },
-    {
-      "id": 4,
       "message": "Testando os logs do sistema",
       "attention": false,
       "tech": "John Doe",
-      "date": "2022-01-19T12:20:38.913Z"
+      "date": "2022-01-20T00:20:33.352Z",
+      "id": 1
     },
     {
-      "message": "A ideia é que o musical faça um \"soft opening\" do espaço, testando equipamentos e treinando funcionários",
-      "attention": false,
+      "message": "Consertei o monitor",
+      "attention": true,
       "tech": "Sara Wilson",
-      "date": "2022-01-18T23:48:53.550Z",
-      "id": 5
+      "date": "2022-01-20T00:20:44.078Z",
+      "id": 2
     },
     {
-      "message": "Meu nome é Enéas",
+      "message": "Testando o componente de opções",
       "attention": false,
-      "tech": "Sam Smith",
-      "date": "2022-01-18T23:49:38.449Z",
-      "id": 6
+      "tech": "Anderson Lima",
+      "date": "2022-01-20T01:15:57.887Z",
+      "id": 3
     }
   ],
   "techs": [
@@ -58,12 +37,6 @@
       "id": 3,
       "firstName": "Sara",
       "lastName": "Wilson"
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
     },
     {
       "firstName": "Anderson",
