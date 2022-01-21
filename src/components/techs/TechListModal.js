@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Preloader from '../layout/Preloader'
-import M from 'materialize-css/dist/js/materialize.min.js'
 import TechItem from './TechItem'
 import { getTechs } from '../../actions/techActions'
 import PropTypes from 'prop-types'
@@ -13,7 +12,7 @@ const TechListModal = ({ tech : { techs, loading } , getTechs }) => {
     useEffect(() => {
         getTechs()
         //eslint-disable-next-line
-    }, [techs])
+    }, [])
 
     return (
         <div id="tech-list-modal" className="modal">

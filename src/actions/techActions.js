@@ -28,6 +28,53 @@ export const getTechs = () => async dispatch => {
 }
 
 
+export const addTech = tech => async dispatch => {
+    try {
+        setLoading()
+
+        const res = await fetch('/techs', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(tech)
+        })
+        const data = res.json()
+
+        dispatch({
+            type: ADD_TECH,
+            payload: data
+        })
+    } catch (error) {
+        dispatch({
+            type: TECHS_ERROR,
+            payload: error.response.statusText
+        })
+    }
+}
+
+export const deleteTech = id => async dispatch => {
+    
+    try {
+        setLoading()
+    
+        await fetch(`/techs/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+
+        dispatch({
+            type: DELETE_TECH
+        })
+    } catch (error) {
+        dispatch({
+            type: TECHS_ERROR,
+            payload: error.response.statusText
+        })
+    }
+}
 
 
 
